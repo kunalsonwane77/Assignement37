@@ -7,12 +7,36 @@
     <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-    <div class="listcontainer">
-            <h1>To do List</h1>
-            <div class="list">
-                
-            </div>
+    <h1>To do List</h1>
+    <div id="listcontainer">
+           
+           
 
     </div>
+    <script>
+         const tasks = ["go to the gym","go to collage","Attend class","assignment","Homework"]
+
+      function taskreload(){
+        const listcontainer= document.getElementById("listcontainer")
+        listcontainer.innerHTML= ``;
+        
+         for(const task of tasks)
+         {
+            listcontainer.innerHTML +=`
+            <div class ="list">
+                ${task}
+
+                 <button id="del"> delete</button>
+            <div/> 
+            
+            `
+         }
+    
+       
+
+      }
+      taskreload();
+
+    </script>
 </body>
 </html>

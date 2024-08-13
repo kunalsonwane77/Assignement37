@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>To do List</h1>
-    <div id="listcontainer">
+    <div id="listcontainer" >
            
            
 
@@ -26,7 +26,9 @@
             <div class ="list">
                 ${task}
 
-                 <button id="del"> delete</button>
+                 <button id="del" onclick="deltask('${task}')"> 
+                  delete
+                  </button>
             <div/> 
             
             `
@@ -34,8 +36,15 @@
     
        
 
+      } 
+      taskreload()
+      function deltask(task){
+        const taskIndex = tasks.indexOf(task);
+        tasks.splice(taskIndex, 1);
+        taskreload()
+
       }
-      taskreload();
+     
 
     </script>
 </body>
